@@ -258,7 +258,7 @@ position: absolute;
  width: 400px;
  background: linear-gradient(135deg,red,orange,gold,yellow,green,blue,cornflowerblue,#fff);
  border-radius: 5px;
- overflow: hidden;
+ 
 }
 .main .mid .editz{
   position:absolute;
