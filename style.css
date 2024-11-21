@@ -1,0 +1,519 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: deepskyblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.whole{
+  width: 99%;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+.whole .top{
+  background: #eee;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+    border-radius: 5px;
+
+}
+.top .logo{
+  color: deepskyblue;
+  
+    font-family: 'Pacifico', cursive;
+  
+}
+.top .Title{
+ 
+ color: red; 
+}
+.top ul{
+  display: flex;
+}
+.top ul li{
+  list-style: none;
+  margin: 0 15px;
+  padding: 8px 7px;
+  cursor: pointer;
+  border-bottom: 2px solid #000;
+  font-family: 'roboto';
+}
+.top ul li:nth-child(4){
+  background: #fff;
+  
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+.top ul li:nth-child(4):hover{
+    background: #fff;
+
+}
+.top ul li:hover{
+  border-color: cornflowerblue;
+  color: cornflowerblue;
+}
+.whole .main{
+  position: relative;
+  width: 100%;
+}
+.main .form{
+  position: absolute;
+  top: 0;
+  background: linear-gradient(1)15deg, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  padding: 6px 5px;
+  border-radius: 5px;
+  display: none;
+  transition: 0.7s;
+}
+.main .edit,.main .backgroundSizeA{
+  position: absolute;
+  top: 0;
+  left: 3%;
+  background: linear-gradient(1)15deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  padding: 6px 5px;
+  border-radius: 5px;
+   display: none;
+
+  transition: 0.7s;
+}
+.main .backgroundSize, .editz .grid{
+ display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 3px;
+}
+.main .backgroundSize div{
+  padding: 15px 10px;
+  background: #444;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.main .backgroundSize div:hover{
+  background: deepskyblue;
+}
+.form h1,.edit h1{
+  color: red;
+}
+.form .grid,.edit .grid{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2,1fr);
+  padding: 10px 3px;
+}
+.grid input,.grid select{
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  border: 2px solid #333;
+  background: #ddd;
+  color: #333;
+}
+.grid input::placeholder {
+    color: #333;
+
+}
+.grid textarea{
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: 2px solid #333;
+    background:#ddd;
+    color: #333;
+    resize: none;
+}
+.grid .file{
+  position: relative;
+  border: 2px solid #333;
+    border-radius: 3px;
+border-style: dashed;
+background: #ddd;
+}
+.file input{
+  opacity: 0;
+}
+.file div{
+  text-align: center;
+  position :absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.file div h5{
+  font-size: 10px;
+ }
+.file div p{
+    font-size: 10px;
+
+}
+.grid button{
+  padding: 6px 3px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+    color: #fff;
+font-weight: bold;
+}
+.grid button:nth-child(1){
+  background:transparent;
+  border: 2px solid red;
+  color: red;
+}
+.grid button:nth-child(2){
+  background: cornflowerblue;
+}
+.main .mid{
+  width: 100%;
+  height: 600px;
+}
+.grid label{
+  cursor: pointer;
+}
+
+/* Hide default checkbox */
+label input {
+  display: none;
+}
+
+/* Styling for every even label in the .grid container */
+.grid label:nth-child(even){
+  width: 50px;
+  height: 25px;
+  border: 2px solid cornflowerblue;
+  position: relative;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Style for the circle inside the checkbox (toggle indicator) */
+.grid label:nth-child(even) span{
+  position: absolute;
+  top: 0.75px;
+  left: 2.5px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.grid label:nth-child(even) span .indicator{
+position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 5px;
+  width: 5px;
+  background: #000;
+  border-radius: 50%;
+    transition: all 0.3s ease;
+
+}
+/* Move the indicator when checked */
+
+.grid label:nth-child(even) input:checked + span{
+  left: 24px; /* Moves the indicator to the right side */
+  background-color: cornflowerblue; /* Changes color when checked */
+}
+.grid label:nth-child(even) input:checked + span .indicator{
+  background: #fff;
+}
+.eclose{
+  margin: 5px;
+}
+.eclose button,.backgroundSizeA button{
+    padding: 6px 3px;
+    border-radius: 5px;
+    border: 2px solid red;
+    outline: none;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    background: transparent;
+    width: 100%;
+}
+.main .mid .result{
+  position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ height: 400px;
+ width: 400px;
+ background: linear-gradient(135deg,red,orange,gold,yellow,green,blue,cornflowerblue,#fff);
+ border-radius: 5px;
+ overflow: hidden;
+}
+.main .mid .editz{
+  position:absolute;
+  top: 5%;
+  right: 5%;
+  display: none;
+  background: linear-gradient(1)15deg, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  padding: 6px 5px;
+  border-radius: 5px;
+}
+.editz h3{
+  background: red;
+  color: #fff;
+  padding: 7px 2px;
+  text-align: center;
+}
+.editz label:nth-child(odd){
+  color: red;
+}
+.editz button{
+  background: deepskyblue;
+}
+.result img{
+  position: absolute;
+  width: 50px;
+}
+.result #npa{
+  position: absolute;
+  left: 0;
+  top: 7px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+#logo{
+  top: 7px;
+  left: 7px;
+  border: 2px solid #000;
+}
+.editz .range{
+  padding: 0;
+  width: 150px;
+  height: 15px;
+  appearance: none;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  border:2px solid cornflowerblue;
+}
+.editz .range::-webkit-slider-thumb{
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 4px solid cornflowerblue;
+   box-shadow: -410px 0 0 400px cornflowerblue;
+}
+.editz #rangeValue,
+.editz #rangeValueA,
+.editz #rangeValueB,
+.editz #rangeValueC,
+.editz #rangeValueD,
+.editz #rangeValueE,
+.editz #rangeValueF,
+.editz #rangeValueG, 
+.editz #rangeValueH
+
+{
+  position: relative;
+  width: 60px;
+  border-radius: 15px;
+  font-size: 1em;
+  color: #fff;
+  background: cornflowerblue;
+  text-align: center;
+  
+}
+
+.editz #color,
+.editz #colorA,
+.editz #colorB,
+.editz #colorC,
+.editz #colorD,
+.editz #colorE,
+.editz #colorF
+{
+  padding: 0;
+  border-radius: 5px;
+}
+footer{
+  background: #ddd;
+  width: 99%;
+  margin-top: 2%;
+  border-radius: 5px;
+  text-align: center;
+}
+footer ul{
+  display: flex;
+  width: 100%;
+  
+  justify-content: center;
+  align-items: center;
+}
+footer ul li{
+  list-style: none;
+  margin: 5px 10px;
+}
+footer ul li a{
+  text-decoration: none;
+  color: cornflowerblue;
+}
+.result h2{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+.result h4{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+}
+.result h5{
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  text-align: justify;
+  width: 50%;
+}
+.result h6{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.result #pp{
+  top: 50%;
+  left: 2%;
+  width: 100px;
+  border: 2px solid #000;
+}
+.result h1{
+  position: absolute;
+  left: 25%;
+  top: 10%;
+}
+.dwn a{
+    text-decoration:none;
+
+  width: 200px;
+  padding: 7px 8px;
+  background: cornflowerblue;
+  color:#fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 4%;
+}
+.backgroundSizeA a{
+  padding: 5px 4px;
+  background: deepskyblue;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.backgroundSizeA a:hover{
+  background: cornflowerblue;
+}
+.backgroundSizeA p{
+  color: red;
+}
+.changeBack{
+  position: absolute;
+  right: 2px;
+  top: 1%;
+   background: linear-gradient(1)15deg, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  padding: 6px 5px;
+  border-radius: 5px;
+  display: none;
+ 
+}
+.changeBack ul{
+  height: 300px;
+  overflow-y: auto;
+}
+.changeBack ul li{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #333;
+  padding: 3px 5px;
+  border-radius: 10px;
+  background: skyblue;
+  color: #fff;
+  margin: 5px 0;
+    cursor: pointer;
+
+}
+.changeBack ul li:hover{
+  background: cornflowerblue;
+}
+.changeBack ul li img{
+  width: 50px;
+  height: 50px;
+  margin: 0 15px 0 0;
+  border-radius: 4px;
+}
+.changeBack button{
+  position: relative;
+  right: 2%;
+  padding: 5px;
+  width: 50px;
+  background: red;
+  color: #fff;
+  border: 2px solid darkred;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+#baback{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+}
+.stdnt, .stff{
+  width: 100%;
+  display: none;
+}
+.stdnt input,.stff input{
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: 2px solid #333;
+    background: #ddd;
+    color: #333;
+    width: 100%;
+}
+
+#cropperModal button {
+  padding: 15px 6px;
+  font-size: 2em;
+  width: 99%;
+  color: #fff;
+  background: transparent;
+  border: 2px solid cornflowerblue;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.9s ease-in-out;
+}
