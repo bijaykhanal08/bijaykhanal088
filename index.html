@@ -14,7 +14,11 @@
   <h1><img src="img/mero.jpg" width="50"></h1>
  <hr>
  <br>
-  <a href="card.html">Card Maker</a>
+  <a onclick="cm()">Card Maker</a>
+  <br>
+  <div class="heln" style="padding: 5px; border-radius: 5px; border: 2px solid #333; width: auto; background: #333; display: none;">
+    <input type="text" name="fh" placeholder="Enter Password here..." id="papa" style="padding: 5px; width: 99%; " oninput="next()" onfocus="this.value=''">
+  </div>
   <br><br>
   @bijaykhanal08
   <p>Click on Card Maker button!!! </p>
@@ -50,6 +54,22 @@
 </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function next(){
+    let A = document.querySelector('#papa').value;
+    if (A === "North") {
+      window.location.href="card.html";
+    }
+      if (A === "keshab") {
+      window.location.href="cardd.html";
+    }
+  }
+    function cm(){
+    let a = document.querySelector('.heln');
+a.style.display = a.style.display === "block" ? "none" : "block";
+}
+</script>
 </body>
 
 </html>
