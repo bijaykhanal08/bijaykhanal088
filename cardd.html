@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>sBijayK</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+ <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Great+Vibes&family=Allura&family=Satisfy&family=Cookie&family=Shadows+Into+Light&family=Agatha&family=Self+Deception&family=Lemon+Jelly&family=Lovely+Coffee&family=The+Scientist&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+ <link rel="website icon" type="png" href="img/mero.jpg">
+ <link href="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v4.0.1.min.css" rel="stylesheet" type="text/css" />
+ <link href="/path/to/local/nepali.datepicker.min.css" rel="stylesheet" type="text/css" />
+ 
+ <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+</head>
+
+<body>
+  <div class="whole">
+    <div class="top">
+      <div class="logo">
+        <h3><img src="img/mero.jpg" width="50"></h3>
+      </div>
+      <div class="Title">
+        <h3>CARD MAKER</h3>
+      </div>
+      <ul>
+    <li onclick="Form()" id="FO">Form</li>
+    
+    <li onclick="Edit()" id="ED">Edit</li>
+    <li onclick="BS()" id="BS">Background Size</li>
+<li id="dwn"> <i class="fa-solid fa-download"></i>
+</li>
+    <li onclick="Back()">➱ Back</li>
+      </ul>
+    </div>
+ <div class="main">
+   <div class="mid">
+    <div class="result">
+      <img src="" id="baback" alt="h">
+      <img src="kses.png" alt="logo" id="logo">
+      <h3 id="npa">Kabilas Samudayik Secondary School</h3>
+   <h1 id="statuS">Happy Birthday</h1>
+      <img src="img/mero.jpg" alt="" id="pp">
+      <h2 id="bName">Mr. Bijay Khanal</h2>
+      <h4 id="clsp">Class:- 2 / Rara</h4>
+      <h5 id="wishess">“Wishing you a birthday as magical as the holidays! May your December be filled with love, joy, and all your favorite things.”</h5>
+      <h6 id="daTe">BS.2081-03-31</h6>
+    </div>
+         <div class="editz" id="scLogo">
+          <h3>School's Logo</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderA(this.value)">
+                 <p id="rangeValueA">0%</p>
+          </div>
+          <label>Border Radius :-</label>
+             <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderG(this.value)">
+                 <p id="rangeValueG">0%</p>
+          </div>
+          <label>Border :-</label>
+          <button onclick="nonBorder()">Hide Border</button>
+            <label for="color">Border Color :-</label>
+            <input type="color" id="colorA">
+      
+
+          </div>
+        </div>
+          <div class="editz" id="scPp">
+            <h3>Image</h3>
+            <hr><br>
+            <div class="grid">
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderC(this.value)">
+                <p id="rangeValueC">0%</p>
+              </div>
+              <label>Border Radius :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderH(this.value)">
+                <p id="rangeValueH">0%</p>
+              </div>
+              <label>Border :-</label>
+              <button onclick="nonBorderA()">Hide Border</button>
+              <label for="color">Border Color :-</label>
+              <input type="color" id="colorC">
+ 
+ 
+            </div>
+          </div>
+    
+        <div class="editz" id="scName">
+          <h3>School's Name</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSlider(this.value)">
+                 <p id="rangeValue">0%</p>
+          </div>
+            <label for="color">Color :-</label>
+            <input type="color" id="color">
+       <label for="font">Font</label>
+      <select id="font" onchange="changeFont()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="bold()">B</button>
+       <button type="submit" onclick="uppercase()">Uppercase</button> 
+
+          </div>
+        </div>
+  
+        <div class="editz" id="scStatus">
+          <h3>Title</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderB(this.value)">
+                 <p id="rangeValueB">0%</p>
+          </div>
+            <label for="colorB">Color :-</label>
+            <input type="color" id="colorB">
+       <label for="font">Font</label>
+      <select id="fontB" onchange="changeFont()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="boldB()">B</button>
+       <button type="submit" onclick="uppercaseB()">Uppercase</button> 
+
+          </div>
+        </div>
+      
+        <div class="editz" id="bBName">
+          <h3>Name</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderD(this.value)">
+                 <p id="rangeValueD">0%</p>
+          </div>
+            <label for="colorD">Color :-</label>
+            <input type="color" id="colorD">
+       <label for="font">Font</label>
+      <select id="fontD" onchange="changeFontD()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="boldD()">B</button>
+       <button type="submit" onclick="uppercaseD()">Uppercase</button> 
+
+          </div>
+        </div>
+  
+          <div class="editz" id="bBcls">
+          <h3>Class / Section</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderE(this.value)">
+                 <p id="rangeValueE">0%</p>
+          </div>
+            <label for="color">Color :-</label>
+            <input type="color" id="colorE">
+       <label for="font">Font</label>
+      <select id="fontE" onchange="changeFontE()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="boldE()">B</button>
+       <button type="submit" onclick="uppercaseE()">Uppercase</button> 
+
+          </div>
+        </div>
+ 
+         <div class="editz" id="bBdate">
+          <h3>Date</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderF(this.value)">
+                 <p id="rangeValueF">0%</p>
+          </div>
+            <label for="color">Color :-</label>
+            <input type="color" id="colorF">
+       <label for="font">Font</label>
+      <select id="fontF" onchange="changeFontF()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="boldF()">B</button>
+       
+
+          </div>
+        </div>
+  
+           <div class="editz" id="bBmes">
+          <h3>Messege</h3>
+          <hr><br>
+          <div class="grid">
+            <label for="size">Size :-</label>
+          <div>  <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderI(this.value)">
+                 <p id="rangeValueI">0%</p>
+          </div>
+            <label for="color">Color :-</label>
+            <input type="color" id="colorI">
+       <label for="font">Font</label>
+      <select id="fontI" onchange="changeFontI()">
+       <optgroup label="Normal Fonts">
+            <option value="tahoma">Tahoma</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="roboto">Roboto</option>
+        </optgroup>
+        <optgroup label="Cursive Fonts">
+            <option value="'Pacifico', cursive">Pacifico</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Dancing Script', cursive">Dancing Script</option>
+            <option value="'Great Vibes', cursive">Great Vibes</option>
+            <option value="'Allura', cursive">Allura</option>
+            <option value="'Satisfy', cursive">Satisfy</option>
+            <option value="'Cookie', cursive">Cookie</option>
+            <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+       
+        </optgroup>
+
+
+
+</select>
+        <button type="submit" onclick="boldI()">B</button>
+       <button type="submit" onclick="uppercaseI()">Uppercase</button> 
+
+          </div>
+        </div>
+   
+    
+   </div>
+   <div class="form">
+    <h1>Card Maker...</h1>
+    <hr>
+    <div class="grid">
+      <div class="file">
+        
+       <input type="file" id="uplogo">
+       <div>
+         <h5><i class="fa-solid fa-image"></i></h5>
+         <p>Upload School's Logo</p>
+       </div>
+             </div>
+
+       <input type="text" placeholder="Enter School's Name..." id="sclName" value="Kabilas Samudayik Secondary School">
+      
+    </div>
+    <hr>
+      <div class="grid">
+  <select name="" id="mrmrs">
+    <option value="Mr.">Mr.</option>
+    <option value="Miss.">Miss.</option>
+    <option value="Mrs.">Mrs.</option>
+  </select>
+    <input type="text" placeholder="Enter Name here..." id="bbName">
+  <select name="" id="stdntstff">
+    <option value="Student">Student</option>
+    <option value="Staff">Staff</option>
+  </select>
+
+<div class="stff">
+  <input type="text" list="stff" placeholder="Enter position..." id="PositionS">
+  <datalist id="stff">
+    <option value="Teacher">Teacher</option>
+    <option value="MD">MD</option>
+    <option value="Chairman">Chairman</option>
+    <option value="Principal">Principal</option>
+ <option value="Vice-Principal">Vice-Principal</option>
+ <option value="IT Co-ordinator">IT Co-ordinator</option>
+ <option value="Accountant">Accountant</option>
+ <option value="Office Assistant">Office Assistant</option>
+ <option value="Guard">Guard</option>
+ <option value="Bus Driver">Bus Driver</option>
+ <option value="Bus Helper">Bus Helper</option>
+  </datalist>
+</div>
+
+<div class="stdnt">
+<input type="text" list="stdnt" id="StudentP" value="" placeholder="Enter class" />
+  <datalist id="stdnt">
+  <option value="Nursery">Nursery</option>
+  <option value="Lkg">Lkg</option>
+  <option value="Ukg">Ukg</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  </datalist>
+</div>
+
+    <input id="dob" type="text"  placeholder="Select Date" required/>
+
+<select name="" id="sttts">
+  <option value="Happy Birthday">Happy Birthday</option>
+ <option value="Congratulation">Congratulation</option>
+</select>
+
+      </div>
+      <hr>
+ <div class="grid">
+       <div class="file">
+ 
+         <input type="file" id="upImage">
+         <div>
+           <h5><i class="fa-solid fa-image"></i></h5>
+           <p>Upload Image</p>
+         </div>
+ </div>
+    <div class="file">
+ 
+      <input type="file" id="changeBackba">
+      <div>
+        <h5><i class="fa-solid fa-image"></i></h5>
+        <p>Change Custom Background</p>
+      </div>
+    </div>
+   </div>
+  <hr>
+ 
+ 
+  <div class="grid">
+  <textarea name="" id="wishesss" cols="30" rows="5" placeholder="Enter Messege here...">“Wishing you a birthday as magical as the holidays! May your December be filled with love, joy, and all your favorite things.”</textarea>
+
+  </div>
+  <hr>
+  <div class="grid">
+    <button type="submit" onclick="fClose()">Cancel</button>
+    <button type="submit" onclick="submitF()">Submit</button>
+  </div>
+   </div>
+   <div class="edit">
+    <h1>Edit</h1>
+    <hr>
+    <div class="grid">
+    <label for="schoolLogo">School's Logo</label>
+    <label for="schoolLogo">
+      <input type="checkbox" id="schoolLogo" onclick="checkOnlyOne(this)" name="toggle">
+      <span>      
+      <i class="indicator"></i>
+</span>
+    </label>
+   
+    <label for="schoolName">School's Name</label>
+    <label for="schoolName">
+      <input type="checkbox" id="schoolName" onclick="checkOnlyOne(this)" name="toggle">
+
+      <span>
+        <i class="indicator"></i>
+      </span>
+    </label>
+        <label for="title">Title</label>
+        <label for="title">
+         <input type="checkbox" id="title" onclick="checkOnlyOne(this)" name="toggle">
+
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
+ 
+  </div>
+  <hr>
+      <div class="grid">
+        <label for="Image">Image</label>
+        <label for="Image">
+       <input type="checkbox" id="Image" onclick="checkOnlyOne(this)" name="toggle">
+
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
+  
+        <label for="naMe">Name</label>
+        <label for="naMe">
+         <input type="checkbox" id="naMe" onclick="checkOnlyOne(this)" name="toggle">
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
+
+         <label for="cass">Class / Section</label>
+         <label for="cass">
+         <input type="checkbox" id="cass" onclick="checkOnlyOne(this)" name="toggle">
+
+           <span>
+             <i class="indicator"></i>
+           </span>
+         </label>
+
+        <label for="dAte">Date</label>
+        <label for="dAte">
+         <input type="checkbox" id="dAte" onclick="checkOnlyOne(this)" name="toggle">
+
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
+ 
+        <label for="mEssege">Messege</label>
+        <label for="mEssege">
+        <input type="checkbox" id="mEssege" onclick="checkOnlyOne(this)" name="toggle">
+
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
+      </div>
+      <hr>
+  <div class="eclose">
+    <button type="submit" onclick="eClose()">Close</button>
+  </div>
+  </div>
+  <div class="backgroundSizeA">
+  <p>Background Size</p>
+  <hr>
+    <div class="backgroundSize">
+      
+    <div onclick="land()">
+    
+      16:9
+    </div>
+    <div onclick="port()">
+      9:16
+    </div>
+    <div onclick="three()">
+      3:4
+    </div>
+    <div onclick="square()">
+      1:1
+    </div>
+        </div>
+  <hr><br>
+    <a onclick="chBack()">Change Background</a>
+    <br/>
+  
+<button type="submit" onclick="BSclose()">Close</button>
+</div>
+<div class="changeBack">
+  <button type="submit" onclick="chBackC()">×</button>
+  <hr>
+  <ul>
+    
+   <li onclick="changeImage('bg/bg1.jpg')"><img src="bg/bg1.jpg" alt="bg1"> <span>Background 1</span></li>
+   
+      <li onclick="changeImage('bg/bg2.jpg')"><img src="bg/bg2.jpg" alt="bg2"> <span>Background 2</span></li>
+
+   <li onclick="changeImage('bg/bg3.jpg')"><img src="bg/bg3.jpg" alt="bg3"> <span>Background 3</span></li>
+   <li onclick="changeImage('bg/bg4.jpg')"><img src="bg/bg4.jpg" alt="bg4"> <span>Background 4</span></li>
+
+   <li onclick="changeImage('bg/bg5.jpg')"><img src="bg/bg5.jpg" alt="bg5"> <span>Background 5</span></li>
+   <li onclick="changeImage('bg/bg6.jpg')"><img src="bg/bg6.jpg" alt="bg6"> <span>Background 6</span></li>
+   <li onclick="changeImage('bg/bg7.jpg')"><img src="bg/bg7.jpg" alt="bg7"> <span>Background 7</span></li>
+   <li onclick="changeImage('bg/bg8.jpg')"><img src="bg/bg8.jpg" alt="bg8"> <span>Background 8</span></li>
+ 
+   <li onclick="changeImage('bg/bg10.jpg')"><img src="bg/bg10.jpg" alt="bg9"> <span>Background 9</span></li>
+  
+   <li onclick="changeImage('bg/bg13.jpg')"><img src="bg/bg13.jpg" alt="bg10"> <span>Background 10</span></li>
+
+
+  </ul>
+</div>
+  </div>
+  </div>
+  <div id="cropperModal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; z-index: 1000; border-radius: 10px; max-width: 80%; max-height: 80%;">
+    <div style="max-width: 300px; max-height: 300px; overflow: hidden; margin: 0 auto;">
+      <img id="cropperImage" src="" style="max-width: 100%; display: block;">
+    </div>
+    <div style="text-align: center; margin-top: 15px;">
+      <button id="cropButton" style="padding: 10px 20px; margin-right: 10px; color: cornflowerblue;">
+        <i class="fa-solid fa-crop"></i>
+  
+        Crop</button>
+      <button id="cancelCrop" style="padding: 10px 20px; color: red;"> <i class="fa-solid fa-circle-xmark"></i>
+        Cancel</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="staff.js"></script>
+  <script src="size.js"></script>
+  <script src="color.js"></script>
+  <script src="bold.js"></script>
+  <script src="font.js"></script>
+ 
+    <script src="submit.js"></script>
+        <script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+    <script src="/path/to/local/nepali.datepicker.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+document.getElementById('dwn').addEventListener('click', function() {
+  const card = document.querySelector('.result');
+  html2canvas(card).then(canvas => {
+    const link = document.createElement('a');
+    const timestamp = new Date().getTime(); // Generate a unique timestamp
+    link.href = canvas.toDataURL('image/png');
+    link.download = `birthday_card_${timestamp}.png`; // Use the timestamp in the download link
+    link.click();
+  });
+});
+
+    window.onload = function() {
+      var mainInput = document.getElementById("dob");
+      mainInput.nepaliDatePicker();
+      
+    };
+  </script>
+<script>
+  let cropper;
+  const input = document.querySelector("#upImage");
+  const cropperModal = document.getElementById('cropperModal');
+  const cropperImage = document.getElementById('cropperImage');
+  const resultImage = document.getElementById('pp');
+  
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        cropperImage.src = reader.result;
+        cropperModal.style.display = 'block';
+  
+        // Initialize Cropper.js with smaller dimensions
+        cropper = new Cropper(cropperImage, {
+          aspectRatio: 1, // Adjust as needed
+          viewMode: 2,
+          minCropBoxWidth: 100, // Minimum crop box width
+          minCropBoxHeight: 100, // Minimum crop box height
+          autoCropArea: 0.8 // Set the initial crop box size smaller
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  
+  document.getElementById('cropButton').addEventListener('click', () => {
+    const croppedCanvas = cropper.getCroppedCanvas({
+      width: 150, // You can adjust the output size here if needed
+      height: 150
+    });
+    resultImage.src = croppedCanvas.toDataURL();
+    cropperModal.style.display = 'none';
+    cropper.destroy(); // Clean up the cropper instance
+  });
+  
+  document.getElementById('cancelCrop').addEventListener('click', () => {
+    cropperModal.style.display = 'none';
+    cropper.destroy();
+  });
+</script>
+</body>
+<footer>  
+<p>Copyright &copy; 2024 All rights reserved || @bijaykhanal08</p>
+<div>
+  <p>Contact to me :</p>
+  <ul>
+    <li><a href="tel:9801998525"><i class="fa-solid fa-phone"></i></a></li>
+    <li><a href="mailto:khanalbijay16@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+  </ul>
+</div>
+</footer>
+</html>
