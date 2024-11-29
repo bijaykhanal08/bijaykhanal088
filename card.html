@@ -515,6 +515,15 @@
             <i class="indicator"></i>
           </span>
         </label>
+
+        <label for="Position">Position</label>
+        <label for="Position">
+          <input type="checkbox" id="Position" onclick="checkOnlyOne(this)" name="toggle">
+
+          <span>
+            <i class="indicator"></i>
+          </span>
+        </label>
       </div>
       <hr>
   <div class="eclose">
@@ -584,14 +593,128 @@
       <button id="cancelCrop" style="padding: 10px 20px; color: red;"> <i class="fa-solid fa-circle-xmark"></i>
         Cancel</button>
     </div>
+
   </div>
+     <div class="drag" id="drag">
+       <div class="control-group">
+      <br>   <label>Move Logo</label><br><br>
+         <label for="logo-top">Top : </label>
+         <input type="range" id="logo-top" min="0" max="400" value="0" oninput="moveLogo()">
+         <label id="dlt">0%</label>
+         <br>
+         <label for="logo-left">Left : </label>
+         <input type="range" id="logo-left" min="0" max="400" value="0" oninput="moveLogo()">
+           <label id="dll">0%</label>
+
+       </div>
+ 
+       <!-- Controls for Name -->
+       <div class="control-group">
+       <br>  <label>Move School's Name</label><br><br>
+         <label for="name-top">Top : </label>
+         <input type="range" id="name-top" min="0" max="400" value="0" oninput="moveName()">
+            <label id="dnt">0%</label>
+
+         <br>
+         <label for="name-left">Left : </label>
+         <input type="range" id="name-left" min="0" max="400" value="0" oninput="moveName()">
+            <label id="dnl">0%</label>
+
+       </div>
+ 
+        <!-- Controls for Name -->
+        <div class="control-group">
+          <br> <label>Move Title</label><br><br>
+          <label>Top : </label>
+          <input type="range" id="moveTitleT" min="0" max="400" value="0" oninput="moveTt()">
+          <label id="dtt">0%</label>
+ 
+          <br>
+          <label>Left : </label>
+          <input type="range" id="moveTitleL" min="0" max="400" value="0" oninput="moveTt()">
+          <label id="dtl">0%</label>
+ 
+        </div>
+ 
+         <!-- Controls for Name -->
+         <div class="control-group">
+           <br> <label>Move Image</label><br><br>
+           <label>Top : </label>
+           <input type="range" id="movePhotoT" min="0" max="400" value="0" oninput="moveP()">
+           <label id="dpt">0%</label>
+ 
+           <br>
+           <label>Left : </label>
+           <input type="range" id="movePhotoL" min="0" max="400" value="0"  oninput="moveP()">
+           <label id="dpl">0%</label>
+ 
+         </div>
+ 
+          <!-- Controls for Name -->
+          <div class="control-group">
+            <br> <label>Move Name</label><br><br>
+            <label>Top : </label>
+            <input type="range" id="moveNameT" min="0" max="400" value="0" oninput="moveN()">
+            <label id="dNt">0%</label>
+ 
+            <br>
+            <label>Left : </label>
+            <input type="range" id="moveNameL" min="0" max="400" value="0" oninput="moveN()">
+            <label id="dNl">0%</label>
+ 
+          </div>
+ 
+           <!-- Controls for Name -->
+           <div class="control-group">
+             <br> <label>Move Class/Position</label><br><br>
+             <label>Top : </label>
+             <input type="range" id="moveCpT" min="0" max="400" value="0" oninput="moveCP()">
+             <label id="dCpt">0%</label>
+ 
+             <br>
+             <label>Left : </label>
+             <input type="range" id="moveCpL" min="0" max="400" value="0" oninput="moveCP()">
+             <label id="dCpl">0%</label>
+ 
+           </div>
+       
+            <!-- Controls for Name -->
+            <div class="control-group">
+              <br> <label>Move Messege</label><br><br>
+              <label>Top : </label>
+              <input type="range" id="moveMsT" min="0" max="400" value="0" oninput="moveMs()">
+              <label id="dMst">0%</label>
+ 
+              <br>
+              <label>Left : </label>
+              <input type="range" id="moveMsL" min="0" max="400" value="0" oninput="moveMs()">
+              <label id="dMsl">0%</label>
+ 
+            </div>
+       
+              <div class="control-group">
+                <br> <label>Move Date</label><br><br>
+                <label>Top : </label>
+                <input type="range" id="moveDT" min="0" max="400" value="0" oninput="moveD()">
+                <label id="dDt">0%</label>
+  
+                <br>
+                <label>Left : </label>
+                <input type="range" id="moveDL" min="0" max="400" value="0" oninput="moveD()">
+                <label id="dDl">0%</label>
+  
+              </div>     
+       
+     </div>
+     </div>
   <script src="main.js"></script>
   <script src="staff.js"></script>
   <script src="size.js"></script>
   <script src="color.js"></script>
   <script src="bold.js"></script>
   <script src="font.js"></script>
- 
+   <script src="drag.js"></script>
+
     <script src="submit.js"></script>
         <script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
     <script src="/path/to/local/nepali.datepicker.min.js" type="text/javascript"></script>
@@ -667,4 +790,4 @@ document.getElementById('dwn').addEventListener('click', function() {
   </ul>
 </div>
 </footer>
-</html>
+              </html>
