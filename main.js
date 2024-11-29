@@ -117,10 +117,12 @@ let bBName = document.querySelector('#bBName');
 let bBcls = document.querySelector('#bBcls');
 let bBdate = document.querySelector('#bBdate');
 let bBmes = document.querySelector('#bBmes');
+let pOsition = document.querySelector('#Position');
+let dRag = document.querySelector('#drag');
 
 // Toggle visibility on checkbox click
-[schoolName, schoolLogo, iMage,title,naMe,cass,dAte, mEssege].forEach((checkbox, index) => {
-  const editnameElements = [scName, scLogo, scPp, scStatus,bBName,bBcls,bBdate,bBmes ];
+[schoolName, schoolLogo, iMage,title,naMe,cass,dAte, mEssege,pOsition].forEach((checkbox, index) => {
+  const editnameElements = [scName, scLogo, scPp, scStatus,bBName,bBcls,bBdate,bBmes ,dRag];
 
 
   checkbox.addEventListener('click', () => {
