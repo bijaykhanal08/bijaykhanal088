@@ -290,15 +290,20 @@ position: absolute;
 }
 .result #npa{
   position: absolute;
-  left: 0;
+  left: 20%;
   top: 7px;
   
   text-transform: capitalize;
-  width: 100%;
+  
 }
 #logo{
   top: 7px;
   left: 7px;
+  border: 2px solid #000;
+}
+#Smata {
+  top: 7px;
+  right: 7px;
   border: 2px solid #000;
 }
 .editz .range{
@@ -327,7 +332,9 @@ position: absolute;
 .editz #rangeValueE,
 .editz #rangeValueF,
 .editz #rangeValueG, 
-.editz #rangeValueH
+.editz #rangeValueH, 
+.editz #rangeValueZ, 
+.editz #rangeValueY
 
 {
   position: relative;
