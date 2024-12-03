@@ -32,6 +32,22 @@ fileInputC.addEventListener('change', function() {
   }
 });
 
+const fileInputR = document.getElementById('upsMata');
+const imageR = document.getElementById('Smata');
+
+
+fileInputR.addEventListener('change', function() {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      imageR.src = event.target.result;
+      imageR.style.display = 'block';
+       
+    };
+    reader.readAsDataURL(file);
+  }
+});
 
 
 
@@ -82,4 +98,3 @@ let stdntstff = document.querySelector("#stdntstff");
 
  
 }
-
