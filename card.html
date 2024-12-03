@@ -48,6 +48,8 @@
     <div class="result">
       <img src="" id="baback" alt="h">
       <img src="logo.png" alt="logo" id="logo">
+     <img src="smata.jpg" alt="Sarswati Mata" id="Smata">
+
       <h3 id="npa">North Point Academy</h3>
    <h1 id="statuS">Happy Birthday</h1>
       <img src="img/mero.jpg" alt="" id="pp">
@@ -76,6 +78,29 @@
 
           </div>
         </div>
+        
+         <div class="editz" id="eXpp">
+           <h3>Extra Picture</h3>
+           <hr><br>
+           <div class="grid">
+             <label for="size">Size :-</label>
+             <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderZ(this.value)">
+               <p id="rangeValueZ">0%</p>
+             </div>
+             <label>Border Radius :-</label>
+             <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderY(this.value)">
+               <p id="rangeValueY">0%</p>
+             </div>
+             <label>Border :-</label>
+             <button onclick="nonBorderZ()">Hide Border</button>
+             <label for="color">Border Color :-</label>
+             <input type="color" id="colorZ">
+
+
+           </div>
+         </div>   
+        
+        
           <div class="editz" id="scPp">
             <h3>Image</h3>
             <hr><br>
@@ -339,7 +364,15 @@
          <p>Upload School's Logo</p>
        </div>
              </div>
-
+ 
+       <div class="file">
+ 
+         <input type="file" id="upsMata">
+         <div>
+           <h5><i class="fa-solid fa-image"></i></h5>
+           <p>Upload Extra Picture</p>
+         </div>
+       </div>
        <input type="text" placeholder="Enter School's Name..." id="sclName" value="North Point Academy">
       
     </div>
@@ -460,6 +493,21 @@
         <i class="indicator"></i>
       </span>
     </label>
+            <label for="eXp">Extra Picture</label>
+            <label for="eXp">
+              <input type="checkbox" id="eXp" onclick="checkOnlyOne(this)" name="toggle">
+    
+              <span>
+                <i class="indicator"></i>
+              </span>
+            </label>
+    
+    
+    
+    
+    
+    
+    
         <label for="title">Title</label>
         <label for="title">
          <input type="checkbox" id="title" onclick="checkOnlyOne(this)" name="toggle">
@@ -608,6 +656,11 @@
 
        </div>
  
+ 
+ 
+ 
+ 
+ 
        <!-- Controls for Name -->
        <div class="control-group">
        <br>  <label>Move School's Name</label><br><br>
@@ -692,7 +745,9 @@
  
             </div>
        
-              <div class="control-group">
+
+     
+               <div class="control-group">
                 <br> <label>Move Date</label><br><br>
                 <label>Top : </label>
                 <input type="range" id="moveDT" min="0" max="400" value="0" oninput="moveD()">
@@ -705,6 +760,21 @@
   
               </div>     
        
+               <div class="control-group">
+                 <br> <label>Move Extra Picture</label><br><br>
+                 <label>Top : </label>
+                 <input type="range" id="movesMT" min="0" max="400" value="0" oninput="movesM()">
+                 <label id="dsMt">0%</label>
+ 
+                 <br>
+                 <label>Left : </label>
+                 <input type="range" id="movesML" min="0" max="400" value="0" oninput="movesM()">
+                 <label id="dsMl">0%</label>
+ 
+               </div>    
+     
+     
+      
      </div>
      </div>
   <script src="main.js"></script>
@@ -790,4 +860,4 @@ document.getElementById('dwn').addEventListener('click', function() {
   </ul>
 </div>
 </footer>
-              </html>
+</html>
