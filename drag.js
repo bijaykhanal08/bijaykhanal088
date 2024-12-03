@@ -87,6 +87,16 @@
       document.getElementById('daTe').style.left = leftValue + 'px';
     }
 
+    function movesM() {
+      const topValue = document.getElementById('movesMT').value;
+      document.getElementById('dsMt').innerHTML = topValue / 4 + "%";
+
+      const leftValue = document.getElementById('movesML').value;
+      document.getElementById('dsMl').innerHTML = leftValue / 4 + "%";
+
+      document.getElementById('Smata').style.top = topValue + 'px';
+      document.getElementById('Smata').style.left = leftValue + 'px';
+    }
 
 
 
