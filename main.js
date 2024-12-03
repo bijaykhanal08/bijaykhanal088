@@ -119,10 +119,12 @@ let bBdate = document.querySelector('#bBdate');
 let bBmes = document.querySelector('#bBmes');
 let pOsition = document.querySelector('#Position');
 let dRag = document.querySelector('#drag');
+let eXp = document.querySelector('#eXp');
+let eXpp = document.querySelector('#eXpp');
 
 // Toggle visibility on checkbox click
-[schoolName, schoolLogo, iMage,title,naMe,cass,dAte, mEssege,pOsition].forEach((checkbox, index) => {
-  const editnameElements = [scName, scLogo, scPp, scStatus,bBName,bBcls,bBdate,bBmes ,dRag];
+[schoolName, schoolLogo, iMage,title,naMe,cass,dAte, mEssege,pOsition,eXp].forEach((checkbox, index) => {
+  const editnameElements = [scName, scLogo, scPp, scStatus,bBName,bBcls,bBdate,bBmes ,dRag,eXpp];
 
 
   checkbox.addEventListener('click', () => {
@@ -164,3 +166,9 @@ stdntstff.addEventListener("click", () => {
     stdnt.style.display = "none"; // Hide student section
   }
 });
+
+
+function nonBorderZ() {
+  let c = document.querySelector('#Smata');
+  c.style.border = "none";
+    }
