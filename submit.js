@@ -72,7 +72,7 @@ function submitF() {
   document.getElementById('wishess').innerHTML =
     document.getElementById('wishesss').value;
   document.getElementById('daTe').innerHTML =
-    document.getElementById('dob').value;
+    "Bs. " + document.getElementById('dob').value;
   document.getElementById('statuS').innerHTML =
     document.getElementById('sttts').value;
 let stdntstff = document.querySelector("#stdntstff");
