@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sBijayK</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: #ddd;
+      padding: 3px;
+    }
+    .main{
+      border: 5px solid #333;
+            border-radius: 5px;
+
+      height:600px;
+      width:99%;
+      position: relative;
+    }
+    .main .result{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:320px;
+      height:213px;
+            border: 5px solid cornflowerblue;
+            border-radius: 5px;
+    }
+   .result #bg{
+           width:320px;
+           height:213px;
+           position: relative;
+   }
+   .result #pp{
+      position: absolute;
+     width:70px;
+   
+    top:30%;
+    left:5%;
+    border: 2px solid #000;
+   }
+   .result p{
+     position: absolute;
+    bottom: 5%;
+    left: 40%;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+   }
+   .result h1{
+     position: absolute;
+     top: 30%;
+     right: 6%;
+     font-size: 20px;
+      color: #fff;
+
+   }
+    .result h3 {
+      position: absolute;
+      top: 40%;
+      right: 6%;
+      font-size: 10px;
+      color: #fff;
+ 
+    }
+     .result h4 {
+       position: absolute;
+       top: 50%;
+       right: 6%;
+       font-size: 10px;
+       color: #fff;
+ width:50%;
+     }
+ .main .form{
+   display: none;
+   position: absolute;
+   width:50%;
+   background: #fff;
+   padding: 5px;
+ }
+ .form h1,.edit h1{
+   color: red;
+   border-bottom:2px solid red;
+   font-size:10px;
+ }
+ .form .grid,.edit .grid{
+   margin: 2px;
+   display: grid;
+   grid-gap: 10px;
+   grid-template-columns: repeat(2,1fr);
+   padding: 3px;
+ }
+ .grid input,.grid select,
+ .grid textarea{
+   background: transparent;
+   padding: 4px;
+   border: 2px solid #333;
+   outline: none;
+   border-radius: 3px;
+ }
+ .grid textarea{
+   resize: none;
+   
+ }
+ .grid button{
+   padding: 5px;
+   outline: none;
+   border-radius: 3px;
+   cursor: pointer;
+ }
+ .grid div{
+   border: 2px solid #333;
+   border-style: dotted;
+      border-radius: 3px;
+position: relative;
+ }
+ .grid div input{
+   opacity: 0;
+ }
+ .grid div p{
+   pointer-events: none;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+ }
+  .grid div span {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 5px;
+  }
+ #submit{
+   background: cornflowerblue;
+   color: #fff;
+   border:none;
+ }
+ #stdnt, #stff{
+   display: none;
+ }
+ .main .top{
+   padding: 5px;
+   background: cornflowerblue;
+   display: flex;
+   justify-content: space-between;
+ }
+ .top h1{
+   color: #fff;
+ }
+ .top ul{
+   display: flex;
+ }
+ .top ul li{
+   list-style: none;
+   padding: 5px;
+   border: 2px solid #fff;
+         border-radius: 5px;
+
+   color: #fff;
+   cursor: pointer;
+   margin: 0 5px;
+ }
+  .top ul li:hover{
+    background: #fff;
+    color: cornflowerblue;
+}
+.main .edit{
+    display: none;
+     position: absolute;
+     width:50%;
+     background: #fff;
+     padding: 5px;
+}
+.top button{
+  width:100px;
+ 
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.edit button,.edit input,.edit label{
+  cursor: pointer;
+}
+.edit button{
+  padding: 5px;
+  width:100%;
+  background: red;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+.main .editz {
+  position: absolute;
+  top: 8%;
+  right: 5%;
+ display: none;
+  background: linear-gradient(1)15deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  padding: 6px 5px;
+  border-radius: 5px;
+}
+.editz h3{
+  background: red;
+  color: #fff;
+  padding: 7px 2px;
+  text-align: center;
+}
+.editz label:nth-child(odd){
+  color: red;
+}
+.editz button{
+  background: deepskyblue;
+}
+.editz p{
+  background: green;
+  color: #fff;
+}
+.editz .range{
+  padding: 0;
+  width: 150px;
+  height: 15px;
+  appearance: none;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  border:2px solid cornflowerblue;
+}
+.editz .range::-webkit-slider-thumb{
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 4px solid cornflowerblue;
+   box-shadow: -410px 0 0 400px cornflowerblue;
+}
+.editz #rangeValue, 
+.editz #rangeValueB, 
+.editz #rangeValueC, 
+.editz #rangeValueD, 
+.editz #rangeValueE, 
+.editz #rangeValueF, 
+.editz #rangeValueNT, 
+.editz #rangeValueNL
+{
+  position: relative;
+  width: 60px;
+  border-radius: 15px;
+  font-size: 1em;
+  color: #fff;
+  background: cornflowerblue;
+  text-align: center;
+  
+}
+
+.editz #color
+{
+  padding: 0;
+  border-radius: 5px;
+}
+  </style>
+</head>
+
+<body>
+
+<div class="main">
+  
+  <div class="top">
+    <h1>sBijayK</h1>
+    <ul>
+      <li onclick="form()">Form</li>
+      <li onclick="Edit()">Edit</li>
+      <li onclick="Back()">Back</li>
+    </ul>
+        <button type="submit">📥</button>
+
+  </div>
+  
+  
+  
+  
+  <div class="result">
+    <img src="kses/bg.jpg" alt="bg1" id="bg">
+    <img src="kses/logo.jpg" alt="pp" id="pp">
+<h1 id="bName">Mr. Bijay Khanal</h1>
+<h3 id="clsp">Class :- 1 (One) </h3>
+<h4 id="wishess">Happy birthday to you</h4>
+    <p id="daTe">Bs. 2081-08-19</p>
+  </div>
+  
+  <div class="form">
+    <h1>Card Maker</h1>
+    <div class="grid">
+     <select name="" id="mrmrs">
+   <option value="Mr.">Mr.</option>
+   <option value="Miss.">Miss.</option>
+   <option value="Mrs.">Mrs.</option>
+     </select>
+     
+   <input type="text" placeholder="Enter Name..." id="bbName">
+  <select name="" id="std">
+    <option value="Student">Student</option>
+    <option value="Staff">Staff</option>
+  </select>
+  <input type="text" placeholder="Select Class..." id="stdnt">
+  <input type="text" placeholder="Select Position..." id="stff">
+  <input type="text" placeholder="Enter Date..." id="dob">
+    
+  </div>
+    <div class="grid">
+
+  <div>
+      <input type="file" id="upPp">
+<p>+</p>
+<span>Upload Image</span>
+  </div>
+  <textarea name="" id="wishesss" cols="30" rows="5">Happy Birthday</textarea>
+  <br>    </div>
+
+  <div class="grid">
+    
+  <button onclick="cncl()">Cancel</button>
+    <button id="submit" onclick="submitF()">Submit</button>
+  </div>
+
+    
+    
+  </div>
+  
+  <div class="edit">
+    <h1>Edit</h1>
+    <div class="grid">
+      <label for="Nname">Name :-</label>
+      <input type="checkbox" id="Nname">
+      <label for="ClaSs">Class :-</label>
+       <input type="checkbox" id="ClaSs">
+<label for="Image">Image :-</label>
+       <input type="checkbox" id="Image">
+<label for="WisH">Wish :-</label>
+       <input type="checkbox" id="WisH">
+<label for="DAte">Date :-</label>
+       <input type="checkbox" id="DAte">
+           </div>
+
+<button onclick="cnclEdit()">Cancel</button>
+  </div>
+  
+          <div class="editz" id="bBName">
+            <h3>Name</h3>
+            <hr><br>
+           
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSlider(this.value)">
+                <p id="rangeValue">0%</p>
+              </div>
+              <label for="color">Color :-</label>
+              <input type="color" id="color">
+<hr>
+<p>Move</p>
+<label for="Top">Top:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNT(this.value)">
+                <p id="rangeValueNT">0%</p>
+              </div>
+ 
+ <label for="left">Left:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderD(this.value)">
+                <p id="rangeValueNL">0%</p>
+              </div>
+                   
+          </div>
+  
+            <div class="editz" id="bBcls">
+            <h3>Class / Position</h3>
+            <hr><br>
+           
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderB(this.value)">
+                <p id="rangeValueB">0%</p>
+              </div>
+              <label for="colorB">Color :-</label>
+              <input type="color" id="colorB">
+<hr>
+<p>Move</p>
+<label for="Top">Top:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNTB(this.value)">
+                <p id="rangeValueNTB">0%</p>
+              </div>
+ 
+ <label for="left">Left:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNLB(this.value)">
+                <p id="rangeValueNLB">0%</p>
+              </div>
+                   
+          </div>
+  
+            <div class="editz" id="bBwish">
+            <h3>Wish</h3>
+            <hr><br>
+           
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderC(this.value)">
+                <p id="rangeValueC">0%</p>
+              </div>
+              <label for="colorC">Color :-</label>
+              <input type="color" id="colorC">
+<hr>
+<p>Move</p>
+<label for="Top">Top:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNTC(this.value)">
+                <p id="rangeValueNTC">0%</p>
+              </div>
+ 
+ <label for="left">Left:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNLC(this.value)">
+                <p id="rangeValueNLC">0%</p>
+              </div>
+                   
+          </div>
+  
+            <div class="editz" id="bBdate">
+            <h3>Date</h3>
+            <hr><br>
+           
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderD(this.value)">
+                <p id="rangeValueD">0%</p>
+              </div>
+              <label for="colorD">Color :-</label>
+              <input type="color" id="colorD">
+<hr>
+<p>Move</p>
+<label for="Top">Top:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNTD(this.value)">
+                <p id="rangeValueNTD">0%</p>
+              </div>
+ 
+ <label for="left">Left:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNLD(this.value)">
+                <p id="rangeValueNLD">0%</p>
+              </div>
+                   
+          </div>
+            <div class="editz" id="bBimage">
+            <h3>Image</h3>
+            <hr><br>
+           
+              <label for="size">Size :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderE(this.value)">
+                <p id="rangeValueE">0%</p>
+              </div>
+              <label for="radius">Border-Radius :-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderF(this.value)">
+                <p id="rangeValueF">0%</p>
+              </div>
+              <label for="colorE">Border Color :-</label>
+              <input type="color" id="colorE">
+<hr>
+<p>Move</p>
+<label for="Top">Top:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="PTop(this.value)">
+                <p id="r">0%</p>
+              </div>
+ 
+ <label for="left">Left:-</label>
+              <div> <input type="range" id="size" min="0" max="100" class="range" value="0" oninput="rangeSliderNLE(this.value)">
+                <p id="rangeValueNLE">0%</p>
+              </div>
+                   
+          </div>
+  
+  
+  
+</div>
+
+
+<script>
+let stdntstff = document.querySelector("#std");
+let stdnt = document.querySelector("#stdnt");
+let stff = document.querySelector("#stff");
+
+stdntstff.addEventListener("click", () => {
+  // Assuming stdntstff is an input or element with a value attribute
+  if (stdntstff.value === "Student") {
+    stdnt.style.display = "block"; // Show student section
+    stff.style.display = "none"; // Hide staff section
+  } 
+  else if(stdntstff.value === "Staff") {
+    stff.style.display = "block"; // Show staff section
+    stdnt.style.display = "none"; // Hide student section
+  }
+});
+
+
+
+
+
+function submitF(){
+
+  document.getElementById('bName').innerHTML =
+    document.getElementById('mrmrs').value+
+        document.getElementById('bbName').value
+
+  document.getElementById('wishess').innerHTML =
+    document.getElementById('wishesss').value;
+  document.getElementById('daTe').innerHTML =
+    "BS. "+ document.getElementById('dob').value;
+
+let stdntstff = document.querySelector("#std");
+      if (stdntstff.value === "Student") {
+     document.getElementById('clsp').innerHTML =
+        "Class :- " + document.getElementById('stdnt').value;
+
+
+      }
+      else if (stdntstff.value === "Staff") {
+         document.getElementById('clsp').innerHTML =
+         document.getElementById('stff').value;
+
+      }
+
+
+
+
+
+
+
+  document.querySelector('.form').style.display = "none";
+
+ 
+}
+function form() {
+  document.querySelector('.form').style.display = "block";
+  document.querySelector('.edit').style.display = "none";
+
+}
+function Edit() {
+  document.querySelector('.edit').style.display = "block";
+    document.querySelector('.form').style.display = "none";
+
+}
+function cncl(){
+    document.querySelector('.form').style.display = "none";
+
+}
+function cnclEdit() {
+  document.querySelector('.edit').style.display = "none";
+
+}
+const fileInput = document.getElementById('upPp');
+const image = document.getElementById('pp');
+
+fileInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      image.src = event.target.result;
+      image.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+});
+function Back(){
+  window.history.back();
+}
+
+</script>
+
+<script>
+  let nName = document.querySelector('#Nname');
+  let cLasS = document.querySelector('#ClaSs');
+    let dAte = document.querySelector('#DAte');
+    let iMage = document.querySelector('#Image');
+    let wIsh = document.querySelector('#WisH');
+
+let bBName = document.querySelector('#bBName');
+let bBcls = document.querySelector('#bBcls');
+let bBdate = document.querySelector('#bBdate');
+let bBimage = document.querySelector('#bBimage');
+let bBwish = document.querySelector('#bBwish');
+
+
+// Toggle visibility on checkbox click
+[nName,cLasS,dAte, iMage, wIsh].forEach((checkbox, index) => {
+  const editnameElements = [bBName,bBcls,bBdate, bBimage, bBwish];
+
+
+  checkbox.addEventListener('click', () => {
+    const editElement = editnameElements[index];
+ 
+    const displayStatus = editElement.style.display === "block" ? "none" : "block";
+
+    editElement.style.display = displayStatus;
+  });
+});
+
+</script>
+<script>
+const colovalue = document.querySelector('#color');
+colovalue.addEventListener('input', function() {
+  document.querySelector('#bName').style.color = colovalue.value;
+});
+
+const colovalueB = document.querySelector('#colorB');
+colovalueB.addEventListener('input', function() {
+  document.querySelector('#clsp').style.color = colovalueB.value;
+});
+
+const colovalueC = document.querySelector('#colorC');
+colovalueC.addEventListener('input', function() {
+  document.querySelector('#wishess').style.color = colovalueC.value;
+});
+
+const colovalueD = document.querySelector('#colorD');
+colovalueD.addEventListener('input', function() {
+  document.querySelector('#daTe').style.color = colovalueD.value;
+});
+
+const colovalueE = document.querySelector('#colorE');
+colovalueE.addEventListener('input', function() {
+  document.querySelector('#pp').style.borderColor = colovalueE.value;
+});
+</script>
+<script>
+       function rangeSlider(value) {
+         document.getElementById('rangeValue').innerHTML = value + "%";
+         document.querySelector('#bName').style.fontSize = value*2+ "%";
+       }
+       function rangeSliderB(value) {
+         document.getElementById('rangeValueB').innerHTML = value + "%";
+         document.querySelector('#clsp').style.fontSize = value + "%";
+       }
+       function rangeSliderC(value) {
+         document.getElementById('rangeValueC').innerHTML = value + "%";
+         document.querySelector('#wishess').style.fontSize = value + "%";
+       }
+       function rangeSliderD(value) {
+         document.getElementById('rangeValueD').innerHTML = value + "%";
+         document.querySelector('#daTe').style.fontSize = value + "%";
+       }
+         function rangeSliderE(value) {
+           document.getElementById('rangeValueE').innerHTML = value + "%";
+           document.querySelector('#pp').style.width= value/2 + "%";
+         }
+          function rangeSliderF(value) {
+            document.getElementById('rangeValueF').innerHTML = value + "%";
+            document.querySelector('#pp').style.borderRadius = value / 2 + "%";
+          }
+</script>
+<script>
+      function rangeSliderNT() {
+        const topValue = document.getElementById('name-top').value;
+        document.getElementById('dnt').innerHTML = topValue / 4 + "%";
+  
+        const leftValue = document.getElementById('name-left').value;
+        document.getElementById('dnl').innerHTML = leftValue / 4 + "%";
+  
+        document.getElementById('npa').style.top = topValue + 'px';
+        document.getElementById('npa').style.left = leftValue + 'px';
+      }
+</script>
+</body>
+
+  </html>
