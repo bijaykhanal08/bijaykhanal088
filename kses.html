@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sBijayK</title>
+ <link href="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v4.0.1.min.css" rel="stylesheet" type="text/css" />
+ <link href="/path/to/local/nepali.datepicker.min.css" rel="stylesheet" type="text/css" />
+
+ <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
   <style>
     *{
       margin: 0;
@@ -284,7 +290,7 @@ position: relative;
       <li onclick="Edit()">Edit</li>
       <li onclick="Back()">Back</li>
     </ul>
-        <button type="submit">📥</button>
+        <button type="submit" id="dwn">📥</button>
 
   </div>
   
@@ -483,7 +489,20 @@ position: relative;
   
   
 </div>
+  <div id="cropperModal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; z-index: 1000; border-radius: 10px; max-width: 80%; max-height: 80%;">
+    <div style="max-width: 300px; max-height: 300px; overflow: hidden; margin: 0 auto;">
+      <img id="cropperImage" src="" style="max-width: 100%; display: block;">
+    </div>
+    <div style="text-align: center; margin-top: 15px;">
+      <button id="cropButton" style="padding: 10px 20px; margin-right: 10px; color: cornflowerblue;">
+        <i class="fa-solid fa-crop"></i>
 
+        Crop</button>
+      <button id="cancelCrop" style="padding: 10px 20px; color: red;"> <i class="fa-solid fa-circle-xmark"></i>
+        Cancel</button>
+    </div>
+
+  </div>
 
 <script>
 let stdntstff = document.querySelector("#std");
@@ -671,6 +690,70 @@ colovalueE.addEventListener('input', function() {
         document.getElementById('npa').style.left = leftValue + 'px';
       }
 </script>
+
+        <script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+        <script src="/path/to/local/nepali.datepicker.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+          document.getElementById('dwn').addEventListener('click', function() {
+            const card = document.querySelector('.result');
+            html2canvas(card).then(canvas => {
+              const link = document.createElement('a');
+              const timestamp = new Date().getTime(); // Generate a unique timestamp
+              link.href = canvas.toDataURL('image/png');
+              link.download = `birthday_card_${timestamp}.png`; // Use the timestamp in the download link
+              link.click();
+            });
+          });
+
+          window.onload = function() {
+            var mainInput = document.getElementById("dob");
+            mainInput.nepaliDatePicker();
+
+          };
+        </script>
+        <script>
+          let cropper;
+          const input = document.querySelector("#upPp");
+          const cropperModal = document.getElementById('cropperModal');
+          const cropperImage = document.getElementById('cropperImage');
+          const resultImage = document.getElementById('pp');
+
+          input.addEventListener("change", () => {
+            const file = input.files[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = () => {
+                cropperImage.src = reader.result;
+                cropperModal.style.display = 'block';
+
+                // Initialize Cropper.js with smaller dimensions
+                cropper = new Cropper(cropperImage, {
+                  aspectRatio: 1, // Adjust as needed
+                  viewMode: 2,
+                  minCropBoxWidth: 100, // Minimum crop box width
+                  minCropBoxHeight: 100, // Minimum crop box height
+                  autoCropArea: 0.8 // Set the initial crop box size smaller
+                });
+              };
+              reader.readAsDataURL(file);
+            }
+          });
+
+          document.getElementById('cropButton').addEventListener('click', () => {
+            const croppedCanvas = cropper.getCroppedCanvas({
+              width: 150, // You can adjust the output size here if needed
+              height: 150
+            });
+            resultImage.src = croppedCanvas.toDataURL();
+            cropperModal.style.display = 'none';
+            cropper.destroy(); // Clean up the cropper instance
+          });
+
+          document.getElementById('cancelCrop').addEventListener('click', () => {
+            cropperModal.style.display = 'none';
+            cropper.destroy();
+          });
+        </script>
 </body>
 
-  </html>
+</html>
