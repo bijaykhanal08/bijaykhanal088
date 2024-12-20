@@ -38,6 +38,8 @@
     
     <li onclick="Edit()" id="ED">Edit</li>
     <li onclick="BS()" id="BS">Background Size</li>
+            <li><input type="text" placeholder="Extra picture opacity..." oninput="opae()" id="opae"></li>
+
 <li id="dwn"> <i class="fa-solid fa-download"></i>
 </li>
     <li onclick="Back()">➱ Back</li>
@@ -848,6 +850,11 @@ document.getElementById('dwn').addEventListener('click', function() {
     cropperModal.style.display = 'none';
     cropper.destroy();
   });
+</script>
+  <script>
+  function opae(){
+    document.querySelector('#Smata').style.opacity = document.querySelector('#opae').value + "%";
+  }
 </script>
 </body>
 <footer>  
